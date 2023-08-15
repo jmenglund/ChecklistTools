@@ -24,6 +24,23 @@ An easy way to get Python working on your computer is to install the free
 `Anaconda distribution <http://anaconda.com/download)>`_.
 
 
+Installation
+------------
+
+The project is hosted at `<https://github.com/jmenglund/ChecklistTools>`_ and 
+can be installed using git:
+
+.. code-block::
+
+    $ git clone https://github.com/jmenglund/ChecklistTools.git
+    $ cd ChecklistTools
+    $ python -m pip install .
+
+
+You may consider installing ChecklistTools and its required Python packages 
+within a virtual environment in order to avoid cluttering your system's 
+Python path.
+
 License
 -------
 
