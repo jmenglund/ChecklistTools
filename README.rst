@@ -41,6 +41,30 @@ You may consider installing ChecklistTools and its required Python packages
 within a virtual environment in order to avoid cluttering your system's 
 Python path.
 
+Usage
+-----
+
+Use the command-line tool ``validate_samples`` to validate sample metadata
+against a `checklist <https://www.ebi.ac.uk/ena/browser/checklists>`_:
+
+.. code-block::
+    
+
+    $ validate_samples --help   
+    usage: validate_samples.py [-h] [-V] [-o, --output FILE] checklist-file samples-file
+
+    Validate sample metadata before submitting them to ENA
+
+    positional arguments:
+    checklist-file     Checkist XML file
+    samples-file       TSV-file with sample metadata
+
+    optional arguments:
+    -h, --help         show this help message and exit
+    -V, --version      show program's version number and exit
+    -o, --output FILE  output file with failure cases in TSV format
+
+
 License
 -------
 
