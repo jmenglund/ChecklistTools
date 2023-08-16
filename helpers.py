@@ -141,7 +141,7 @@ def get_samples_restriction(field: ET.ElementTree) -> ColumnRestriction:
         checks = pa.Check.isin(text_choice_values)
     elif field_type == "TEXT_FIELD":
         try:
-            regex_value = field_type_element.find("REGEX_VALUE").text
+            regex_value = field_type_element.find("TEXT_FIELD/REGEX_VALUE").text
             checks = pa.Check(regex_value=regex_value)
         except AttributeError:
             checks = None
