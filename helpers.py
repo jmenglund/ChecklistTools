@@ -142,7 +142,7 @@ def get_samples_restriction(field: ET.ElementTree) -> ColumnRestriction:
     elif field_type == "TEXT_FIELD":
         try:
             regex_value = field_type_element.find("TEXT_FIELD/REGEX_VALUE").text
-            checks = pa.Check(regex_value=regex_value)
+            checks = pa.Check.str_matches(regex_value)
         except AttributeError:
             checks = None
     else:
