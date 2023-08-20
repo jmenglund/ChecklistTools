@@ -13,7 +13,8 @@ from typing import Optional
 import pandas as pd
 import pandera as pa
 
-from helpers import is_file, checklist_to_schemas, StoreExpandedPath
+from checklistlib import xml_tree_to_checklist
+from helpers import is_file, StoreExpandedPath
 
 
 __author__ = "Markus Englund"
@@ -28,8 +29,10 @@ def main(args=None):
 
     # Parse checklist XML file
     xml_tree = ET.parse(parser.checklist_file)
+    checklist = xml_tree_to_checklist(xml_tree)
+
     # Create validation schemas from checklist
-    (units_schema, samples_schema) = checklist_to_schemas(xml_tree)
+    (units_schema, samples_schema) = checklist.to_pandera_schemas()
 
     # Read units data
     with open(parser.samples_file) as units_file:
@@ -49,7 +52,7 @@ def main(args=None):
 
     if parser.output_file is not None and samples_failures is not None:
         samples_failures.to_csv(parser.output_file, sep="\t")
-        print(f"Validation failures saved to file \"{parser.output_file}\"")
+        print(f'Validation failures saved to file "{parser.output_file}"')
 
 
 def parse_args(args):
@@ -93,7 +96,7 @@ def validate_checklist_schema(
         header = compose_error_msg_header(schema)
         msg = reformat_error_msg(str(err), header)
         print(msg)
-        return(err.failure_cases)
+        return err.failure_cases
 
 
 def compose_error_msg_header(schema: pa.DataFrameSchema) -> str:

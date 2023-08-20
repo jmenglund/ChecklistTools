@@ -16,7 +16,7 @@ Source repository: `<https://github.com/jmenglund/ChecklistTools>`_
 Prerequisites
 -------------
 
-* Python 3.9+
+* Python 3.10+
 * The Python library `Pandera <https://github.com/unionai-oss/pandera>`_
   (version 0.16 or higher)
 
