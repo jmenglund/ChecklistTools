@@ -16,7 +16,7 @@ setup(
     long_description=open(
         join(dirname(__file__), "README.rst"), encoding="utf-8"
     ).read(),
-    py_modules=["helpers", "validate_samples"],
+    py_modules=["checklistlib", "helpers", "validate_samples"],
     install_requires=["pandera>=0.16"],
     entry_points={
         "console_scripts": [
