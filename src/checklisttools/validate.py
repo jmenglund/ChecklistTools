@@ -6,20 +6,19 @@ import re
 import sys
 import xml.etree.ElementTree as ET
 
-from itertools import islice
+from importlib.metadata import version
 from io import StringIO
+from itertools import islice
 from typing import Optional
 
 import pandas as pd
 import pandera as pa
 
-from checklistlib import xml_tree_to_checklist
-from helpers import is_file, StoreExpandedPath
+from .checklistlib import xml_tree_to_checklist
+from .helpers import is_file, StoreExpandedPath
 
 
-__author__ = "Markus Englund"
-__license__ = "MIT"
-__version__ = "0.1.0"
+__version__ = version("checklisttools")
 
 
 def main(args=None):
@@ -57,7 +56,7 @@ def main(args=None):
 
 def parse_args(args):
     parser = argparse.ArgumentParser(
-        prog="validate_against_checklist",
+        prog="ChecklistTools",
         description=("Validate sample metadata before submitting them to ENA"),
     )
     parser.add_argument(

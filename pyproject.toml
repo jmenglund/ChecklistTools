@@ -1,0 +1,35 @@
+[tool.poetry]
+name = "ChecklistTools"
+version = "0.1.0"
+description = "A collection of Python scripts to facilitate work with ENA sample checklists."
+authors = ["Markus Englund <markus.englund@nbis.se>"]
+license = "MIT"
+readme = "README.rst"
+keywords=["ENA", "checklist", "validation", "sample metadata", "pandera", "pandas"]
+packages = [{ include = "checklisttools", from = "src" },]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering",
+]
+
+[tool.poetry.scripts]
+validate_samples = "checklisttools.validate:main"
+generate_template = "checklisttools.generate_template:main"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pandera = "^0.16.1"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

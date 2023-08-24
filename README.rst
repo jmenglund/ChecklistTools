@@ -18,7 +18,7 @@ Prerequisites
 
 * Python 3.10+
 * The Python library `Pandera <https://github.com/unionai-oss/pandera>`_
-  (version 0.16 or higher)
+  version 0.16.1 or higher (installed with the tool)
 
 An easy way to get Python working on your computer is to install the free
 `Anaconda distribution <http://anaconda.com/download)>`_.
@@ -28,14 +28,11 @@ Installation
 ------------
 
 The project is hosted at `<https://github.com/jmenglund/ChecklistTools>`_ and 
-can be installed using git:
+can be installed using `pip`:
 
 .. code-block::
 
-    $ git clone https://github.com/jmenglund/ChecklistTools.git
-    $ cd ChecklistTools
-    $ python -m pip install .
-
+    $ pip install git+https://github.com/jmenglund/ChecklistTools.git#egg=ChecklistTools
 
 You may consider installing ChecklistTools and its required Python packages 
 within a virtual environment in order to avoid cluttering your system's 
